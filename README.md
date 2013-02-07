@@ -11,23 +11,23 @@ This packages set up an environment for executing ANT tasks in a chained way (i.
 Each task belong to one category. Categories specify the main action its tasks execute and correspond to one step in an auto-build process. For example, we could have the category 'javac-compile', to which tasks 'javac' (compile Java code with javac) or 'gcc' (compile C code with gcc) may belong.
 
 The following are the categories currently defined and its tasks:
--export
-  -svn-export
-	-github-pull
--compile
-	-javac-compile
--test
-	-junit-test
--build
-	-custom-build
--database
-	-postgres-dump
-	-sql-backup
--doc
-	-javadoc
--deploy
-	-ftp-transfer
-	-http-upload
+* export
+  	* svn-export
+	* github-pull
+* compile
+	* javac-compile
+* test
+	* junit-test
+* build
+	* custom-build
+* database
+	* postgres-dump
+	* sql-backup
+* doc
+	* javadoc
+* deploy
+	* ftp-transfer
+	* http-upload
 	
 The categories hierarchy is based in a layout of directories that matches the hierarchy; for example, we a have the directories 'tasks/compile/javac-compile' and 'tasks/deploy/ftp-transfer'.
 
@@ -46,8 +46,8 @@ How to extend it
 You can create new tasks inside the categories already defined by just creating a new directory for that task inside the corresponding category folder, and create its 'build.xml' file.
 
 The 'build.xml' file should conform to the following conventions:
--The project name should be the name of the category. For example, the 'tasks/database/postgres-dump/build.xml' file has the tag <project name="database" default="default">.
--Have a task named 'default' (which is the one that will be invoked).
+* The project name should be the name of the category. For example, the 'tasks/database/postgres-dump/build.xml' file has the tag <project name="database" default="default">.
+* Have a task named 'default' (which is the one that will be invoked).
 
 To create a new category you should create a folder with the name of the category inside the 'tasks' directory, and the folders and 'build.xml' file for each specific task. Then you should create a target for this category in 'dependencies.xml', and define or reasemble all the dependencies.
 
