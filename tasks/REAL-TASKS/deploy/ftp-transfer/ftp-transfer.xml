@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project.custom.build" default="do.all" basedir=".">
+    <description>Builds, tests, and runs the project.</description>
+    
+    <!--
+    Custom targets (tasks)
+    -->
+    <tstamp>
+        <format property="DSTAMP" pattern="dd-MM-yyyy" locale="es, ESP"/>
+    </tstamp>
+    <property file="ftp-transfer.properties"/>
+    <!--Task to copy the distributable to download place
+        It also renames some files (to put time stamps, for example)-->    
+    <target name="ftp.transfer">
+        <ftp action="mkdir"
+             server="${ftpserver.dir}"
+             userid="${ftpserver.user}"
+             password="${ftpserver.pass}"
+             remotedir="${ftp.export.version}"
+        />
+        <ftp server="${ftpserver.dir}"
+             userid="${ftpserver.user}"
+             password="${ftpserver.pass}"
+             remotedir="${ftp.export.version}">
+            <fileset dir="${base.transfer.dir}">
+                <exclude name="README.TXT"/>
+                <exclude name="javadoc"/>
+            </fileset>
+        </ftp>
+    </target>
+    
+    <target name="do.all" depends="ftp.transfer"/>
+</project>

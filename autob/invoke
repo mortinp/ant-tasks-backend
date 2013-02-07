@@ -1,0 +1,22 @@
+#!/bin/bash
+
+current_dir=$(pwd)
+script_dir=$(dirname "$0")
+if [ "$script_dir" = "." ]
+then
+script_dir="$current_dir"
+fi
+
+export ANT_HOME=${script_dir}/3p/ant
+export PATH=${PATH}:${ANT_HOME}/bin
+
+export category=$1
+export task=$2
+
+ant_lib_extras=$script_dir/3p/ant/lib/extras
+
+cd ..
+
+# Add the following in the ant invocation to send output to $script_dir/temp/build_log.xml file:
+# -logger org.apache.tools.ant.XmlLogger -logfile "$script_dir/temp/build_log.xml"
+ant -lib "$ant_lib_extras" -buildfile "tasks/$category/$task/build.xml" "do.with.dependencies"

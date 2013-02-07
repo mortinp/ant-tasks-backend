@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<!-- By default, only the Clean and Build commands use this build script. -->
+<!-- Commands such as Run, Debug, and Test only use this build script if -->
+<!-- the Compile on Save feature is turned off for the project. -->
+<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
+<!-- in the project's Project Properties dialog box.-->
+<project name="project.custom.build" default="do.all" basedir=".">
+    <description>Builds, tests, and runs the project.</description>    
+    
+    <!--
+    Custom targets (tasks)
+    -->
+    <tstamp>
+        <format property="DSTAMP" pattern="dd-MM-yyyy" locale="es, ESP"/>
+    </tstamp>
+    <property file="postgres-dump.properties"/>
+    
+    <target name="bd.dump.postgres" >
+        <property name="backup.name" value="bd_${db.name}(${time.stamp}).backup" />
+        <property name="file.name" value="${dist.dir}/${backup.name}" />
+        <exec executable="${postgres.pgdump.exe}" failonerror="true">
+            <arg value="-h" />
+            <arg value="${db.server.ip}" />
+            <arg value="-F" />
+            <arg value="t" />
+            <arg value="-f" />
+            <arg value="${file.name}" />
+            <arg value="-U" />
+            <arg value="${db.user}" />
+            <arg value="${db.name}" />
+            <env key="PGPASSWORD" value="${db.pass}"/>
+        </exec>
+    </target>
+    
+    <target name="do.all" depends="bd.dump.postgres"/>
+</project>

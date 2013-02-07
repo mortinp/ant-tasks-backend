@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="log.xsl"?>
+
+<build time="0 seconds">
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:3: " name="dirname" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:4: " name="property" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/deploy/ftp-transfer/build.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:3: " name="dirname" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:4: " name="property" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/deploy/ftp-transfer/build.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:3: " name="dirname" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:4: " name="property" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/export/github-export/build.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:3: " name="dirname" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:4: " name="property" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/compile/javac-compile/build.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:3: " name="dirname" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:4: " name="property" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/test/junit-test/build.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:3: " name="dirname" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:4: " name="property" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build/custom-build/build.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:3: " name="dirname" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:4: " name="property" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/database/postgres-dump/build.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:3: " name="dirname" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:4: " name="property" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:3: " name="import" time="0 seconds" />
+	<task location="/var/www/autob/autobenv/tasks/test/deploy/ftp-transfer/build.xml:3: " name="import" time="0 seconds" />
+	<target name="do.with.dependencies" time="0 seconds">
+		<task location="/var/www/autob/autobenv/tasks/test/build-common.xml:6: " name="antcall" time="0 seconds">
+			<target name="do.export" time="0 seconds">
+				<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:14: " name="ant" time="0 seconds">
+					<target name="default" time="0 seconds">
+						<task location="/var/www/autob/autobenv/tasks/test/export/github-export/build.xml:6: " name="echo" time="0 seconds">
+							<message priority="warn"><![CDATA[doing export - github export]]></message>
+						</task>
+					</target>
+				</task>
+			</target>
+			<target name="do.compile" time="0 seconds">
+				<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:22: " name="ant" time="0 seconds">
+					<target name="default" time="0 seconds">
+						<task location="/var/www/autob/autobenv/tasks/test/compile/javac-compile/build.xml:6: " name="echo" time="0 seconds">
+							<message priority="warn"><![CDATA[doing compile - javac compile]]></message>
+						</task>
+					</target>
+				</task>
+			</target>
+			<target name="do.test" time="0 seconds">
+				<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:30: " name="ant" time="0 seconds">
+					<target name="default" time="0 seconds">
+						<task location="/var/www/autob/autobenv/tasks/test/test/junit-test/build.xml:6: " name="echo" time="0 seconds">
+							<message priority="warn"><![CDATA[doing test - junit test]]></message>
+						</task>
+					</target>
+				</task>
+			</target>
+			<target name="do.build" time="0 seconds">
+				<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:38: " name="ant" time="0 seconds">
+					<target name="default" time="0 seconds">
+						<task location="/var/www/autob/autobenv/tasks/test/build/custom-build/build.xml:6: " name="echo" time="0 seconds">
+							<message priority="warn"><![CDATA[doing build - custom build]]></message>
+						</task>
+					</target>
+				</task>
+			</target>
+			<target name="do.database" time="0 seconds">
+				<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:46: " name="ant" time="0 seconds">
+					<target name="default" time="0 seconds">
+						<task location="/var/www/autob/autobenv/tasks/test/database/postgres-dump/build.xml:6: " name="echo" time="0 seconds">
+							<message priority="warn"><![CDATA[doing database - postgres dump]]></message>
+						</task>
+					</target>
+				</task>
+			</target>
+			<target name="do.doc" time="0 seconds" />
+			<target name="do.deploy" time="0 seconds">
+				<task location="/var/www/autob/autobenv/tasks/test/dependencies.xml:62: " name="ant" time="0 seconds">
+					<target name="default" time="0 seconds">
+						<task location="/var/www/autob/autobenv/tasks/test/deploy/ftp-transfer/build.xml:6: " name="echo" time="0 seconds">
+							<message priority="warn"><![CDATA[doing deploy - ftp transfer]]></message>
+						</task>
+					</target>
+				</task>
+			</target>
+		</task>
+	</target>
+</build>

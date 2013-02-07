@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="build-common" default="dist">
+    <import file="dependencies.xml"/>
+	
+	<target name="do.with.dependencies">
+        <antcall target="do.${ant.project.name}"></antcall>
+    </target>
+</project>

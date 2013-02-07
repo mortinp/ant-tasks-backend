@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns:xalan="http://xml.apache.org/xalan">
+  <output>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td class="bannercell" valign="top">
+          <h3>Output</h3>
+        </td>
+      </tr>
+    </table>
+    <h3>Build Complete</h3>
+    <p>Total Time: 1 second</p>
+    <h3>Build events</h3>
+    <table width="100%" cellpadding="3" cellspacing="2" border="1" class="log">
+      <tr>
+        <th width="1%" align="left" nowrap="yes">target</th>
+        <th width="1%" align="left" nowrap="yes">task</th>
+        <th align="left" nowrap="yes">message</th>
+      </tr>
+      <tr valign="top" class="a">
+        <td width="1%" nowrap="yes">default</td>
+        <td width="1%" style="text-align:right" nowrap="yes">[ echo ]</td>
+        <td nowrap="yes" class="warn">doing export - github export</td>
+      </tr>
+      <tr valign="top" class="b">
+        <td width="1%" nowrap="yes">default</td>
+        <td width="1%" style="text-align:right" nowrap="yes">[ echo ]</td>
+        <td nowrap="yes" class="warn">doing compile - javac compile</td>
+      </tr>
+      <tr valign="top" class="a">
+        <td width="1%" nowrap="yes">default</td>
+        <td width="1%" style="text-align:right" nowrap="yes">[ echo ]</td>
+        <td nowrap="yes" class="warn">doing test - junit test</td>
+      </tr>
+      <tr valign="top" class="b">
+        <td width="1%" nowrap="yes">default</td>
+        <td width="1%" style="text-align:right" nowrap="yes">[ echo ]</td>
+        <td nowrap="yes" class="warn">doing build - custom build</td>
+      </tr>
+      <tr valign="top" class="a">
+        <td width="1%" nowrap="yes">default</td>
+        <td width="1%" style="text-align:right" nowrap="yes">[ echo ]</td>
+        <td nowrap="yes" class="warn">doing database - postgres dump</td>
+      </tr>
+    </table>
+    <p/>
+  </output>
+</html>

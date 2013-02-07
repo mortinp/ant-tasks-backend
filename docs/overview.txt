@@ -1,0 +1,16 @@
+About:
+
+This is going to be a web application to manage the autobuild process of varios projects at the same time.
+
+
+Idea:
+
+We are going to have a system based on various directories. 
+
+In the directory 'tasks' we are going to have all the template ant tasks, organized by categories. For example, there is the category 'database', and we have the task 'postgres-dump' belonging this category; this way, there is a directory named 'tasks/database/postgres-dump', which contains a 'postgres-dump.xml' file inside. This xml file defines the tasks to make a postgres backup, parameterized according to certain 'postgres-dump.properties' file's properties values (we will see later where this file comes from).
+
+There is also a directory named projects, which contains all the configurations for each project. For every project there is created a separate directory: if we have 'projectA', then there is a directory named 'projects/projectA'. A project might perform certain tasks; for each of these tasks, the project directory contains one properties file. These properties file has the same name as the tasks it is related to. For example, if 'projectA' performs the task 'postgres-dump', then there exists the file 'projects/projectA/postgres-dump.properties'.
+
+To perform a project's autobuild, we should iterate through the tasks this project uses, copy the corresponding properties file to the same directory as the task's ant build file, and call ant passing the build file.
+
+It is obvious that in the server side we can tell what tasks a project uses by exploring its corresponding directory (looking at the properties files, which have the same name as the task it is used for...NOTE: how do I know the category of the task???).

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="test_project" default="do.all" basedir=".">
+    <description>Exports from SVN repository.</description> 
+    
+    <!-- svnant lib -->
+    <property name="svnant.lib" value="${ant.home}/lib" />
+    <property name="svnant.jar" value="${svnant.lib}/svnant.jar" />
+    <property name="svnClientAdapter.jar" value="${svnant.lib}/svnClientAdapter.jar" />
+    <property name="svnjavahl.jar" value="${svnant.lib}/svnjavahl.jar" />
+    
+    <property file="svn-export.properties"/>
+    
+    <!-- Path to the svnant libraries. Usually they will be located in ANT_HOME/lib -->
+    <path id="project.classpath">
+        <pathelement location="${svnjavahl.jar}" />
+        <pathelement location="${svnant.jar}" />
+        <pathelement location="${svnClientAdapter.jar}" />
+    </path>
+    
+    <!-- load the svn task -->
+    <taskdef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="project.classpath"/>
+    
+    <!-- Prepare export directory -->
+    <target name="prepare.svn.export.dir">
+        <echo message="Preparing SVN export directory: ${svn.export.path}" />
+        <delete dir="${svn.export.path}"/>
+        <mkdir dir="${svn.export.path}"/>
+    </target>
+    
+    <!-- Export -->
+    <target name="svn.export">
+        <echo message="Exporting files from SVN repository: ${svn.url}" />
+        <!--<input message="Please enter svn repo username:" addproperty="svn.username" />
+        <input message="Please enter svn repo password:" addproperty="svn.password" /> -->
+        <svn username="${svn.username}" password="${svn.password}">
+            <export srcUrl="${svn.url}/" destPath="${svn.export.path}" force="true" revision="HEAD" />
+        </svn>
+    </target>
+    
+    <target name="do.all" depends="prepare.svn.export.dir, svn.export"/>
+</project>

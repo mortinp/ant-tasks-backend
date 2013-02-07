@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="dependencies" default="do.all">
+    <dirname property="dependencies.basedir" file="${ant.file.dependencies}"/>
+	<property file="${dependencies.basedir}/specific-tasks.properties"/>
+	
+    <!-- ================================================================== -->
+    <target name="do.all"
+            depends="do.export, do.build, do.database, do.deploy">
+    </target>
+    <!-- ================================================================== -->
+    <target name="do.export" if="export.specific.task">
+        <ant dir="${dependencies.basedir}/export/${export.specific.task}"
+             target="default" 
+             inheritAll="false"/>
+    </target>
+	<!-- ================================================================== -->
+    <target name="do.compile"
+            depends="do.export"
+			if="compile.specific.task">
+        <ant dir="${dependencies.basedir}/compile/${compile.specific.task}"
+             target="default" 
+             inheritAll="false"/>
+    </target>
+	<!-- ================================================================== -->
+    <target name="do.test"
+            depends="do.compile"
+			if="test.specific.task">
+        <ant dir="${dependencies.basedir}/test/${test.specific.task}"
+             target="default" 
+             inheritAll="false"/>
+    </target>
+    <!-- ================================================================== -->
+    <target name="do.build"
+            depends="do.export, do.compile, do.test"
+			if="build.specific.task">
+        <ant dir="${dependencies.basedir}/build/${build.specific.task}"
+             target="default" 
+             inheritAll="false"/>
+    </target>
+    <!-- ================================================================== -->
+    <target name="do.database"
+			depends="do.build"
+			if="database.specific.task">
+        <ant dir="${dependencies.basedir}/database/${database.specific.task}"
+             target="default" 
+             inheritAll="false"/>
+    </target>
+	<!-- ================================================================== -->
+    <target name="do.doc"
+			depends="do.build"
+			if="doc.specific.task">
+        <ant dir="${dependencies.basedir}/doc/${doc.specific.task}"
+             target="default" 
+             inheritAll="false"/>
+    </target>
+    <!-- ================================================================== -->
+    <target name="do.deploy"
+            depends="do.build, do.database, do.doc"
+			if="deploy.specific.task">
+        <ant dir="${dependencies.basedir}/deploy/${deploy.specific.task}"
+             target="default" 
+             inheritAll="false"/>
+    </target>
+</project>

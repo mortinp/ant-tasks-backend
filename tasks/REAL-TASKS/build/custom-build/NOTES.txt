@@ -1,0 +1,1 @@
+This build step takes into account that you might need extra libraries to build your project. So it works with the convenction that there exists a file with all these dependencies defined as properties.

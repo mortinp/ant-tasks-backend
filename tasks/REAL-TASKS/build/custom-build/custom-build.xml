@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project.custom.build" default="default" basedir=".">
+    <description>Builds, tests, and runs the project.</description>    
+    <import file="build.xml"/><!--User supplied file-->
+        
+    <!--Override -init-private-->
+    <target name="-init-private">
+        <!--Load properties from custom .properties file
+        
+        The file project-custom-build.properties is similar to <home_folder>/.netbeans/7.0/build.properties,
+        only customized for the server where the build is going to happen. 
+        
+        NOTE: Netbeans libraries folders must exist physically in the server. The file project-custom-build.properties
+        must be configured to "point" to the libraries folders.
+        -->
+        <property file="custom-build.properties"/>
+    </target>
+    
+    <!--Override -javadoc-build-->
+    <target name="-javadoc-build">
+        <!--DO NOTHING-->
+    </target>
+</project>
