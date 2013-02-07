@@ -4,10 +4,6 @@
 	<property file="${dependencies.basedir}/specific-tasks.properties"/>
 	
     <!-- ================================================================== -->
-    <target name="do.all"
-            depends="do.export, do.build, do.database, do.deploy">
-    </target>
-    <!-- ================================================================== -->
     <target name="do.export" if="export.specific.task">
         <ant dir="${dependencies.basedir}/export/${export.specific.task}"
              target="default" 
