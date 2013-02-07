@@ -13,7 +13,7 @@ Each task belong to one category. Categories specify the main action its tasks e
 The following are the categories currently defined and its tasks:
 * export
   	* svn-export
-	* github-pull
+	* git-export
 * compile
 	* javac-compile
 * test
@@ -38,7 +38,8 @@ The file 'build-common.xml' imports 'dependencies.xml', which allows us to invok
 How to use it
 =============
 
-Simply specify the tasks you want to execute in the file 'specific-tasks.properties' (order doesn't matter) and run 'invoke<.bat>' script. Make sure to follow the conventions (you should be able to discover the conventions easily).
+Simply specify the tasks you want to execute in the file 'specific-tasks.properties' (order doesn't matter) and run 'invoke-entry<.bat>' script, or invoke<.bat> script passing two parameters: category and task (ex. invoke "deploy" "ftp-transfer").
+Make sure to follow the conventions when editing 'specific-tasks.properties' (you should be able to discover the conventions easily).
 
 How to extend it
 ================
