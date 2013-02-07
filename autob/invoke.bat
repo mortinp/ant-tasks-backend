@@ -17,5 +17,5 @@ cd ..
 
 rem Add the following in the ant invocation to send output to $script_dir/temp/build_log.xml file:
 rem -logger org.apache.tools.ant.XmlLogger -logfile "%script_dir%/temp/build_log.xml"
-ant -lib "%ant_lib_extras%"  -buildfile "tasks/%category%/%task%/build.xml" do.with.dependencies
+ant -quiet -lib "%ant_lib_extras%"  -buildfile "tasks/%category%/%task%/build.xml" do.with.dependencies
 pause
