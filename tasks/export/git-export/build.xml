@@ -3,6 +3,6 @@
 	<import file="../../build-common.xml"/>
 	
     <target name="default">
-		<echo message="doing ${ant.project.name} - github pull"/>
+		<echo message="doing ${ant.project.name} - git export"/>
 	</target>
 </project>
