@@ -8,7 +8,7 @@ Introduction
 
 This packages set up an environment for executing ANT tasks in a chained way (i.e. tasks depend on each other).
 
-Each task belong to one category. Categories specify the main action its tasks execute and correspond to one step in an auto-build process. For example, we could have the category 'javac-compile', to which tasks 'javac' (compile Java code with javac) or 'gcc' (compile C code with gcc) may belong.
+Each task belong to one category. Categories specify the main action its tasks execute and correspond to one step in an auto-build process. For example, we could have the category 'compile', to which tasks 'javac-compile' (compile Java code with javac) or 'gcc-compile' (compile C code with gcc) may belong.
 
 The following are the categories currently defined and its tasks:
 * export
