@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="compile" default="default">
-	<import file="../../build-common.xml"/>
+<project name="javac-compile" default="default">
+	<!--<import file="../../build-common.xml"/>-->
 
     <target name="default">
-		<echo message="doing ${ant.project.name} - javac compile"/>
+		<echo message="doing compile - javac compile"/>
 	</target>
 </project>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="build" default="default">
-	<import file="../../build-common.xml"/>
+<project name="custom-build" default="default">
+	<!--<import file="../../build-common.xml"/>-->
 	
     <target name="default">
-		<echo message="doing ${ant.project.name} - custom build"/>
+		<echo message="doing build - custom build"/>
 	</target>
 </project>

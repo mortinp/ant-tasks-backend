@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="export" default="default">
-	<import file="../../build-common.xml"/>
+<project name="svn-export" default="default">
+	<!--<import file="../../build-common.xml"/>-->
 	
     <target name="default">
-		<echo message="doing ${ant.project.name} - svn export"/>
+		<echo message="doing export - svn export"/>
 	</target>
 </project>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="database" default="default">
-	<import file="../../build-common.xml"/>
+<project name="sql-backup" default="default">
+	<!--<import file="../../build-common.xml"/>-->
 
     <target name="default">
-		<echo message="doing ${ant.project.name} - sql backup"/>
+		<echo message="doing database - sql backup"/>
 	</target>
 </project>

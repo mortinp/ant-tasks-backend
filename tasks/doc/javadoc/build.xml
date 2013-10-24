@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="doc" default="default">
-	<import file="../../build-common.xml"/>
+<project name="javadoc" default="default">
+	<!--<import file="../../build-common.xml"/>-->
 	
     <target name="default">
-		<echo message="doing ${ant.project.name} - javadoc"/>
+		<echo message="doing doc - javadoc"/>
 	</target>
 </project>
